@@ -3,20 +3,21 @@ from scipy.stats import multivariate_normal as mvn
 
 class trajectory():
     
-    def __init__(self, seed=123, ndat=100):
+    def __init__(self, seed=123, ndat=100, q=.5, r=3.):
         self.ndat = ndat
         self.seed = seed
-        self.q = .5
+        self.q = q
         self.dt = 1
-        self.r = 3.
+        self.r = r
         self.A = np.array([[1, 0, self.dt, 0],
                            [0, 1, 0, self.dt],
                            [0, 0, 1,  0],
                            [0, 0, 0,  1]])
-        self.Q = self.q * np.array([[self.dt**3/3, 0      , self.dt**2/2, 0      ],
-                               [0,       self.dt**3/3, 0,       self.dt**2/2],
-                               [self.dt**2/2, 0,       self.dt,      0      ],
-                               [0,       self.dt**2/2, 0,       self.dt     ]])
+        #self.Q = self.q**2 * np.array([[self.dt**3/3, 0      , self.dt**2/2, 0      ],
+                                      #[0,       self.dt**3/3, 0,       self.dt**2/2],
+                                      #[self.dt**2/2, 0,       self.dt,      0      ],
+                                      #[0,       self.dt**2/2, 0,       self.dt     ]])
+        self.Q = self.q**2 * np.eye(4)
         self.H = np.array([[1., 0, 0, 0],
                            [0., 1, 0, 0]])
         self.R = self.r**2 * np.eye(2)
@@ -30,15 +31,11 @@ class trajectory():
         
         x = self.m0;
         for t in range(self.ndat):
-            q = mvn.rvs(cov=self.Q)
-#            print('q:\n', q)
-            x = self.A.dot(x) + q
-#            print('x: \n', x)
+            w = mvn.rvs(cov=self.Q)
+            x = self.A.dot(x) + w
             y = self.H.dot(x) + mvn.rvs(cov=self.R)
-#            print('y:\n', y)
             self.X[:,t] = x.flatten()
             self.Y[:,t] = y.flatten()
-#            print('-------')
 
 
 if __name__ == '__main__':
