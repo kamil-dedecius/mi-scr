@@ -3,7 +3,9 @@
 Materiály k předmětu NI-SCR ve formě Jupyter Notebooků.
 
 Materiály jsou pro inženýrské studium v nematematickém oboru, proto postrádají
-rigorizitu. Vhodná literatura je např.:
+rigorizitu. Navíc jsou neustále ve vývoji, prosím sledujte aktuální verzi (a studujte podle ní).
+
+Vhodná literatura např.:
 - J. Durbin & S.J. Koopman: Time Series Analysis by State-Space Methods.
 - R.J. Hyndman & G. Athanasopoulos: Forecasting: Principles and Practice. [(webová verze)](https://otexts.com/fpp2/)
 - D. Simon: Optimal State Estimation: Kalman, H Infinity, and Nonlinear Approaches.
