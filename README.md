@@ -3,7 +3,7 @@
 Materiály k předmětu NI-SCR ve formě Jupyter Notebooků.
 
 Materiály jsou pro inženýrské studium v nematematickém oboru, proto postrádají
-rigorizitu. Navíc jsou neustále ve vývoji, prosím sledujte aktuální verzi (a studujte podle ní).
+rigorozitu. Navíc jsou neustále ve vývoji, prosím sledujte aktuální verzi (a studujte podle ní).
 
 Vhodná literatura např.:
 - J. Durbin & S.J. Koopman: Time Series Analysis by State-Space Methods.
