@@ -21,4 +21,4 @@ def tsplot(y, lags=15):
     
     # acf, pacf
     plot_acf(y, lags=lags, ax=acf_ax, alpha=0.5)
-    plot_pacf(y, lags=lags, ax=pacf_ax, alpha=0.5) 
+    plot_pacf(y, lags=lags, ax=pacf_ax, alpha=0.5, method='ywm') 
